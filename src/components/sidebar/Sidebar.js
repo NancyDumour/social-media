@@ -10,55 +10,55 @@ import {
   Event,
   School,
 } from "@material-ui/icons";
-import "./Sidebar.css";
+import styles from "./Sidebar.module.scss";
 import CloseFriends from "../closeFriends/CloseFriends";
 import { Users } from "../../dummyData";
 
 export default function Sidebar() {
   return (
-    <div className="sidebar">
-      <div className="sidebarWrapper">
-        <ul className="sidebarList">
-          <li className="sidebarListItem">
-            <RssFeed className="sidebarIcon" />
-            <span className="sidebarListItemText">Feed</span>
+    <div className={styles.sidebar}>
+      <div className={styles.sidebarWrapper}>
+        <ul className={styles.sidebarList}>
+          <li className={styles.sidebarListItem}>
+            <RssFeed className={styles.sidebarIcon} />
+            <span className={styles.sidebarListItemText}>Feed</span>
           </li>
-          <li className="sidebarListItem">
-            <Chat className="sidebarIcon" />
-            <span className="sidebarListItemText">Chats</span>
+          <li className={styles.sidebarListItem}>
+            <Chat className={styles.sidebarIcon} />
+            <span className={styles.sidebarListItemText}>Chats</span>
           </li>
-          <li className="sidebarListItem">
-            <PlayCircleFilledOutlined className="sidebarIcon" />
-            <span className="sidebarListItemText">Videos</span>
+          <li className={styles.sidebarListItem}>
+            <PlayCircleFilledOutlined className={styles.sidebarIcon} />
+            <span className={styles.sidebarListItemText}>Videos</span>
           </li>
-          <li className="sidebarListItem">
-            <Group className="sidebarIcon" />
-            <span className="sidebarListItemText">Groups</span>
+          <li className={styles.sidebarListItem}>
+            <Group className={styles.sidebarIcon} />
+            <span className={styles.sidebarListItemText}>Groups</span>
           </li>
-          <li className="sidebarListItem">
-            <Bookmark className="sidebarIcon" />
-            <span className="sidebarListItemText">Bookmarks</span>
+          <li className={styles.sidebarListItem}>
+            <Bookmark className={styles.sidebarIcon} />
+            <span className={styles.sidebarListItemText}>Bookmarks</span>
           </li>
-          <li className="sidebarListItem">
-            <HelpOutline className="sidebarIcon" />
-            <span className="sidebarListItemText">Questions</span>
+          <li className={styles.sidebarListItem}>
+            <HelpOutline className={styles.sidebarIcon} />
+            <span className={styles.sidebarListItemText}>Questions</span>
           </li>
-          <li className="sidebarListItem">
-            <WorkOutline className="sidebarIcon" />
-            <span className="sidebarListItemText">Jobs</span>
+          <li className={styles.sidebarListItem}>
+            <WorkOutline className={styles.sidebarIcon} />
+            <span className={styles.sidebarListItemText}>Jobs</span>
           </li>
-          <li className="sidebarListItem">
-            <Event className="sidebarIcon" />
-            <span className="sidebarListItemText">Events</span>
+          <li className={styles.sidebarListItem}>
+            <Event className={styles.sidebarIcon} />
+            <span className={styles.sidebarListItemText}>Events</span>
           </li>
-          <li className="sidebarListItem">
-            <School className="sidebarIcon" />
-            <span className="sidebarListItemText">Courses</span>
+          <li className={styles.sidebarListItem}>
+            <School className={styles.sidebarIcon} />
+            <span className={styles.sidebarListItemText}>Courses</span>
           </li>
         </ul>
-        <button className="sidebarButton">Show More</button>
-        <hr className="sidebarHr" />
-        <ul className="sidebarFriendList">
+        <button className={styles.sidebarButton}>Show More</button>
+        <hr className={styles.sidebarHr} />
+        <ul className={styles.sidebarFriendList}>
           {Users.map((user) => {
             return <CloseFriends key={user.id} user={user} />;
           })}

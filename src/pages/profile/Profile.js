@@ -1,36 +1,36 @@
 import React from "react";
-import "./Profile.css";
 import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
+import styles from "./Profile.module.scss";
 
 export default function Profile() {
   return (
     <>
       <Topbar />
-      <div className="profile">
+      <div className={styles.profile}>
         <Sidebar />
-        <div className="profileRight">
-          <div className="profileRightTop">
-            <div className="profileCover">
+        <div className={styles.profileRight}>
+          <div className={styles.profileRightTop}>
+            <div className={styles.profileCover}>
               <img
-                className="profileCoverImg"
+                className={styles.profileCoverImg}
                 src="assets/post/3.jpeg"
                 alt=""
               />
               <img
-                className="profileUserImg"
+                className={styles.profileUserImg}
                 src="assets/person/7.jpeg"
                 alt=""
               />
             </div>
-            <div className="profileInfo">
-              <h4 className="profileInfoName">Safak Kocaoglu</h4>
-              <span className="profileInfoDesc">Hello my friends!</span>
+            <div className={styles.profileInfo}>
+              <h4 className={styles.profileInfoName}>Safak Kocaoglu</h4>
+              <span className={styles.profileInfoDesc}>Hello my friends!</span>
             </div>
           </div>
-          <div className="profileRightBottom">
+          <div className={styles.profileRightBottom}>
             <Feed />
             <Rightbar profile />
           </div>

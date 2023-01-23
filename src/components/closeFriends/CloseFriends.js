@@ -1,11 +1,15 @@
 import React from "react";
-import "./CloseFriends.css";
+import styles from "./CloseFriends.module.scss";
 
 const CloseFriends = ({ user }) => {
   return (
-    <li className="sidebarFriend">
-      <img className="sidebarFriendImg" src={user.profilePicture} alt="" />
-      <span className="sidebarFriendName">{user.username}</span>
+    <li className={styles.sidebarFriend}>
+      <img
+        className={styles.sidebarFriendImg}
+        src={user.profilePicture}
+        alt=""
+      />
+      <span className={styles.sidebarFriendName}>{user.username}</span>
     </li>
   );
 };

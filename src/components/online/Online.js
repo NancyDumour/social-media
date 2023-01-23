@@ -1,13 +1,17 @@
 import React from "react";
-import "./Online.css";
+import styles from "./Online.module.scss";
 const Online = ({ user }) => {
   return (
-    <li className="rightbarFriend">
-      <div className="rightbarProfileImgContainer">
-        <img className="rightbarProfileImg" src={user.profilePicture} alt="" />
-        <span className="rightbarOnline" />
+    <li className={styles.rightbarFriend}>
+      <div className={styles.rightbarProfileImgContainer}>
+        <img
+          className={styles.rightbarProfileImg}
+          src={user.profilePicture}
+          alt=""
+        />
+        <span className={styles.rightbarOnline} />
       </div>
-      <span className="rightbarUsername">{user.username}</span>
+      <span className={styles.rightbarUsername}>{user.username}</span>
     </li>
   );
 };

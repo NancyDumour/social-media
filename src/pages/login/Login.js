@@ -1,23 +1,23 @@
 import React from "react";
-import "./Login.css";
+import styles from "./Login.module.scss";
 
 export default function Login() {
   return (
-    <div className="login">
-      <div className="loginWrapper">
-        <div className="loginLeft">
-          <h3 className="loginLogo">Lamasocial</h3>
-          <span className="loginDesc">
+    <div className={styles.login}>
+      <div className={styles.loginWrapper}>
+        <div className={styles.loginLeft}>
+          <h3 className={styles.loginLogo}>Lamasocial</h3>
+          <span className={styles.loginDesc}>
             Connect with your friends and the world around you on Lamasocial
           </span>
         </div>
-        <div className="loginRight">
-          <div className="loginBox">
-            <input placeholder="Email" className="loginInput" />
-            <input placeholder="Password" className="loginInput" />
-            <button className="loginButton">Log In</button>
-            <span className="loginForgot">Forgot Password?</span>
-            <button className="loginRegisterButton">
+        <div className={styles.loginRight}>
+          <div className={styles.loginBox}>
+            <input placeholder="Email" className={styles.loginInput} />
+            <input placeholder="Password" className={styles.loginInput} />
+            <button className={styles.loginButton}>Log In</button>
+            <span className={styles.loginForgot}>Forgot Password?</span>
+            <button className={styles.loginRegisterButton}>
               Create a New Account
             </button>
           </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Rightbar.css";
+import styles from "./Rightbar.module.scss";
 import { Users } from "../../dummyData";
 import Online from "../online/Online";
 
@@ -7,15 +7,15 @@ export default function Rightbar({ profile }) {
   const HomeRightbar = () => {
     return (
       <>
-        <div className="birthdayContainer">
-          <img className="birthdayImg" src="assets/gift.png" alt="" />
-          <span className="birthdayText">
+        <div className={styles.birthdayContainer}>
+          <img className={styles.birthdayImg} src="assets/gift.png" alt="" />
+          <span className={styles.birthdayText}>
             <b>Pola Foster</b> and <b>3 other friends</b> have a birhday today.
           </span>
         </div>
-        <img className="rightbarAd" src="assets/ad.png" alt="" />
-        <h4 className="rightbarTitle">Online Friends</h4>
-        <ul className="rightbarFriendList">
+        <img className={styles.rightbarAd} src="assets/ad.png" alt="" />
+        <h4 className={styles.rightbarTitle}>Online Friends</h4>
+        <ul className={styles.rightbarFriendList}>
           {Users.map((user) => (
             <Online key={user.id} user={user} />
           ))}
@@ -27,78 +27,78 @@ export default function Rightbar({ profile }) {
   const ProfileRightbar = () => {
     return (
       <>
-        <h4 className="rightbarTitle">User information</h4>
-        <div className="rightbarInfo">
-          <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">City:</span>
-            <span className="rightbarInfoValue">New York</span>
+        <h4 className={styles.rightbarTitle}>User information</h4>
+        <div className={styles.rightbarInfo}>
+          <div className={styles.rightbarInfoItem}>
+            <span className={styles.rightbarInfoKey}>City:</span>
+            <span className={styles.rightbarInfoValue}>New York</span>
           </div>
-          <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">From:</span>
-            <span className="rightbarInfoValue">Madrid</span>
+          <div className={styles.rightbarInfoItem}>
+            <span className={styles.rightbarInfoKey}>From:</span>
+            <span className={styles.rightbarInfoValue}>Madrid</span>
           </div>
-          <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">Relationship:</span>
-            <span className="rightbarInfoValue">Single</span>
+          <div className={styles.rightbarInfoItem}>
+            <span className={styles.rightbarInfoKey}>Relationship:</span>
+            <span className={styles.rightbarInfoValue}>Single</span>
           </div>
         </div>
-        <h4 className="rightbarTitle">User friends</h4>
-        <div className="rightbarFollowings">
-          <div className="rightbarFollowing">
+        <h4 className={styles.rightbarTitle}>User friends</h4>
+        <div className={styles.rightbarFollowings}>
+          <div className={styles.rightbarFollowing}>
             <img
               src="assets/person/1.jpeg"
               alt=""
-              className="rightbarFollowingImg"
+              className={styles.rightbarFollowingImg}
             />
-            <span className="rightbarFollowingName">John Carter</span>
+            <span className={styles.rightbarFollowingName}>John Carter</span>
           </div>
-          <div className="rightbarFollowing">
+          <div className={styles.rightbarFollowing}>
             <img
               src="assets/person/2.jpeg"
               alt=""
-              className="rightbarFollowingImg"
+              className={styles.rightbarFollowingImg}
             />
-            <span className="rightbarFollowingName">John Carter</span>
+            <span className={styles.rightbarFollowingName}>John Carter</span>
           </div>
-          <div className="rightbarFollowing">
+          <div className={styles.rightbarFollowing}>
             <img
               src="assets/person/3.jpeg"
               alt=""
-              className="rightbarFollowingImg"
+              className={styles.rightbarFollowingImg}
             />
-            <span className="rightbarFollowingName">John Carter</span>
+            <span className={styles.rightbarFollowingName}>John Carter</span>
           </div>
-          <div className="rightbarFollowing">
+          <div className={styles.rightbarFollowing}>
             <img
               src="assets/person/4.jpeg"
               alt=""
-              className="rightbarFollowingImg"
+              className={styles.rightbarFollowingImg}
             />
-            <span className="rightbarFollowingName">John Carter</span>
+            <span className={styles.rightbarFollowingName}>John Carter</span>
           </div>
-          <div className="rightbarFollowing">
+          <div className={styles.rightbarFollowing}>
             <img
               src="assets/person/5.jpeg"
               alt=""
-              className="rightbarFollowingImg"
+              className={styles.rightbarFollowingImg}
             />
-            <span className="rightbarFollowingName">John Carter</span>
+            <span className={styles.rightbarFollowingName}>John Carter</span>
           </div>
-          <div className="rightbarFollowing">
+          <div className={styles.rightbarFollowing}>
             <img
               src="assets/person/6.jpeg"
               alt=""
-              className="rightbarFollowingImg"
+              className={styles.rightbarFollowingImg}
             />
-            <span className="rightbarFollowingName">John Carter</span>
+            <span className={styles.rightbarFollowingName}>John Carter</span>
           </div>
         </div>
       </>
     );
   };
   return (
-    <div className="rightbar">
-      <div className="rightbarWrapper">
+    <div className={styles.rightbar}>
+      <div className={styles.rightbarWrapper}>
         {profile ? <ProfileRightbar /> : <HomeRightbar />}
       </div>
     </div>

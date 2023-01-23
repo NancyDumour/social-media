@@ -1,42 +1,42 @@
 import React from "react";
-import "./Topbar.css";
+import styles from "./Topbar.module.scss";
 import { Search, Person, Chat, Notifications } from "@material-ui/icons";
 
 export default function Topbar() {
   return (
-    <div className="topbarContainer">
-      <div className="topbarLeft">
-        <span className="logo">Lamasocial</span>
+    <div className={styles.topbarContainer}>
+      <div className={styles.topbarLeft}>
+        <span className={styles.logo}>Lamasocial</span>
       </div>
-      <div className="topbarCenter">
-        <div className="searchbar">
-          <Search className="searchIcon" />
+      <div className={styles.topbarCenter}>
+        <div className={styles.searchbar}>
+          <Search className={styles.searchIcon} />
           <input
             placeholder="Search for friend, post or video"
-            className="searchInput"
+            className={styles.searchInput}
           />
         </div>
       </div>
-      <div className="topbarRight">
-        <div className="topbarLinks">
-          <span className="topbarLink">Homepage</span>
-          <span className="topbarLink">Timeline</span>
+      <div className={styles.topbarRight}>
+        <div className={styles.topbarLinks}>
+          <span className={styles.topbarLink}>Homepage</span>
+          <span className={styles.topbarLink}>Timeline</span>
         </div>
-        <div className="topbarIcons">
-          <div className="topbarIconItem">
+        <div className={styles.topbarIcons}>
+          <div className={styles.topbarIconItem}>
             <Person />
-            <span className="topbarIconBadge">1</span>
+            <span className={styles.topbarIconBadge}>1</span>
           </div>
-          <div className="topbarIconItem">
+          <div className={styles.topbarIconItem}>
             <Chat />
-            <span className="topbarIconBadge">2</span>
+            <span className={styles.topbarIconBadge}>2</span>
           </div>
-          <div className="topbarIconItem">
+          <div className={styles.topbarIconItem}>
             <Notifications />
-            <span className="topbarIconBadge">1</span>
+            <span className={styles.topbarIconBadge}>1</span>
           </div>
         </div>
-        <img src="/assets/person/1.jpeg" alt="" className="topbarImg" />
+        <img src="/assets/person/1.jpeg" alt="" className={styles.topbarImg} />
       </div>
     </div>
   );
