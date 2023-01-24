@@ -6,8 +6,8 @@ import { Posts } from "../../dummyData";
 
 const Feed = () => {
   return (
-    <div className={styles.feed}>
-      <div className={styles.feedWrapper}>
+    <div className={styles.root}>
+      <div className={styles.wrapper}>
         <Share />
         {Posts.map((post) => {
           return <Post post={post} key={post.id} />;

@@ -3,21 +3,22 @@ import styles from "./Login.module.scss";
 
 export default function Login() {
   return (
-    <div className={styles.login}>
-      <div className={styles.loginWrapper}>
+    <div className={styles.root}>
+      <div className={styles.wrapper}>
         <div className={styles.loginLeft}>
-          <h3 className={styles.loginLogo}>Lamasocial</h3>
-          <span className={styles.loginDesc}>
-            Connect with your friends and the world around you on Lamasocial
+          <h3 className={styles.logo}>React Social Media</h3>
+          <span className={styles.description}>
+            Connect with your friends and the world around you on React Social
+            Media
           </span>
         </div>
         <div className={styles.loginRight}>
-          <div className={styles.loginBox}>
+          <div className={styles.box}>
             <input placeholder="Email" className={styles.loginInput} />
             <input placeholder="Password" className={styles.loginInput} />
             <button className={styles.loginButton}>Log In</button>
-            <span className={styles.loginForgot}>Forgot Password?</span>
-            <button className={styles.loginRegisterButton}>
+            <span className={styles.forgot}>Forgot Password?</span>
+            <button className={styles.registerButton}>
               Create a New Account
             </button>
           </div>

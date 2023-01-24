@@ -16,23 +16,23 @@
   background-color: rgb(179, 179, 179);
 }
 
-.sidebarWrapper {
+.wrapper {
   padding: 20px;
 }
 
-.sidebarList {
+.list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.sidebarListItem {
+.listItem {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.sidebarIcon {
+.icon {
   margin-right: 15px;
 }
 
@@ -48,7 +48,7 @@
   margin: 20px 0;
 }
 
-.sidebarFriendList {
+.firendsList {
   padding: 0;
   margin: 0;
   list-style: none;

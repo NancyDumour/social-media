@@ -1,8 +1,8 @@
-.rightbar {
+.root {
   flex: 3.5;
 }
 
-.rightbarWrapper {
+.wrapper {
   padding: 20px 20px 0 0;
 }
 
@@ -22,60 +22,57 @@
   font-size: 15px;
 }
 
-.rightbarAd {
+.ad {
   width: 100%;
   border-radius: 10px;
   margin: 30px 0;
 }
 
-.rightbarTitle {
-  margin-bottom: 20px;
-}
 
-.rightbarFriendList {
+.friendsList {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.rightbarTitle {
+.title {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 10px;
 }
 
-.rightbarInfo {
+.info {
   margin-bottom: 30px;
 }
 
-.rightbarInfoItem {
+.infoItem {
   margin-bottom: 10px;
 }
 
-.rightbarInfoKey {
+.infoKey {
   font-weight: 500;
   margin-right: 15px;
   color: #555;
 }
 
-.rightbarInfoValue {
+.infoValue {
   font-weight: 300;
 }
 
-.rightbarFollowings {
+.followings {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.rightbarFollowing {
+.following {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
   cursor: pointer;
 }
 
-.rightbarFollowingImg {
+.followingImg {
   width: 100px;
   height: 100px;
   object-fit: cover;

@@ -7,6 +7,8 @@ const Post = ({ post }) => {
   const [like, setLike] = useState(post.like);
   const [isLiked, setIsLiked] = useState(false);
 
+  const publicPhoto = process.env.REACT_APP_PUBLIC_FOLDER;
+
   const user = Users.filter((user) => user.id === post.userId)[0].username;
   const profilePicture = Users.filter((user) => user.id === post.userId)[0]
     .profilePicture;
@@ -17,17 +19,17 @@ const Post = ({ post }) => {
   };
 
   return (
-    <div className={styles.post}>
-      <div className={styles.postWrapper}>
+    <div className={styles.root}>
+      <div className={styles.wrapper}>
         <div className={styles.postTop}>
           <div className={styles.postTopLeft}>
             <img
-              src={profilePicture}
+              src={publicPhoto + profilePicture}
               alt=""
-              className={styles.postProfileImg}
+              className={styles.profileImg}
             />
-            <span className={styles.postUsername}>{user}</span>
-            <span className={styles.postDate}>{post.date}</span>
+            <span className={styles.username}>{user}</span>
+            <span className={styles.date}>{post.date}</span>
           </div>
           <div className={styles.postTopRight}>
             <MoreVert />
@@ -35,25 +37,27 @@ const Post = ({ post }) => {
         </div>
         <div className={styles.postCenter}>
           <span className={styles.postText}>{post.desc}</span>
-          <img src={post.photo} alt="" className={styles.postImg} />
+          <img
+            src={publicPhoto + post.photo}
+            alt=""
+            className={styles.postImg}
+          />
         </div>
         <div className={styles.postBottom}>
           <div className={styles.postBottomLeft}>
             <img
-              src="assets/like.png"
+              src={`${publicPhoto}like.png`}
               alt=""
               className={styles.likeIcon}
               onClick={likeHandler}
             />
             <img
-              src="assets/heart.png"
+              src={`${publicPhoto}heart.png`}
               alt=""
               className={styles.likeIcon}
               onClick={likeHandler}
             />
-            <span className={styles.postLikeCounter}>
-              {like} people like it
-            </span>
+            <span className={styles.likeCounter}>{like} people like it</span>
           </div>
           <div className={styles.postBottomRight}>
             <span className={styles.postCommentText}>

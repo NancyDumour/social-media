@@ -1,4 +1,4 @@
-.login {
+.root {
   width: 100vw;
   height: 100vh;
   background-color: #f0f2f5;
@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-.loginWrapper {
+.wrapper {
   width: 70%;
   height: 70%;
   display: flex;
@@ -21,18 +21,18 @@
   justify-content: center;
 }
 
-.loginLogo {
+.logo {
   font-size: 50px;
   font-weight: 800;
   color: #1775ee;
   margin-bottom: 10px;
 }
 
-.loginDesc {
+.description {
   font-size: 24px;
 }
 
-.loginBox {
+.box {
   height: 400px;
   padding: 20px;
   background-color: white;
@@ -65,12 +65,8 @@
   cursor: pointer;
 }
 
-.loginForgot {
-  text-align: center;
-  color: #1775ee;
-}
 
-.loginRegisterButton {
+.register {
   width: 60%;
   align-self: center;
   height: 50px;

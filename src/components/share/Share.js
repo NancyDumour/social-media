@@ -4,12 +4,12 @@ import styles from "./Share.module.scss";
 
 const Share = () => {
   return (
-    <div className={styles.share}>
-      <div className={styles.shareWrapper}>
+    <div className={styles.root}>
+      <div className={styles.wrapper}>
         <div className={styles.shareTop}>
           <img
             src="/assets/person/1.jpeg"
-            className={styles.shareProfileImg}
+            className={styles.profileImg}
             alt=""
           />
           <input

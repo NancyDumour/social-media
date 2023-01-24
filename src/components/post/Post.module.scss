@@ -1,4 +1,4 @@
-.post {
+.root {
   width: 100%;
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
@@ -6,7 +6,7 @@
   margin: 30px 0;
 }
 
-.postWrapper {
+.wrapper {
   padding: 10px;
 }
 
@@ -21,20 +21,20 @@
   align-items: center;
 }
 
-.postProfileImg {
+.profileImg {
   width: 32px;
   height: 32px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.postUsername {
+.username {
   font-size: 15px;
   font-weight: 500;
   margin: 0 10px;
 }
 
-.postDate {
+.date {
   font-size: 12px;
 }
 
@@ -67,7 +67,7 @@
   cursor: pointer;
 }
 
-.postLikeCounter {
+.likeCounter {
   font-size: 15px;
 }
 

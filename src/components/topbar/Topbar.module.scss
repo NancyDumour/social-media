@@ -1,4 +1,4 @@
-.topbarContainer {
+.container {
   height: 50px;
   width: 100%;
   background-color: #1877f2;
@@ -56,23 +56,23 @@
   color: white;
 }
 
-.topbarLink {
+.link {
   margin-right: 10px;
   font-size: 14px;
   cursor: pointer;
 }
 
-.topbarIcons {
+.icons {
   display: flex;
 }
 
-.topbarIconItem {
+.iconItem {
   margin-right: 15px;
   cursor: pointer;
   position: relative;
 }
 
-.topbarIconBadge {
+.iconBadge {
   width: 15px;
   height: 15px;
   background-color: red;

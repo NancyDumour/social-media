@@ -2,14 +2,16 @@ import React from "react";
 import styles from "./CloseFriends.module.scss";
 
 const CloseFriends = ({ user }) => {
+  const publicPhoto = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
-    <li className={styles.sidebarFriend}>
+    <li className={styles.root}>
       <img
-        className={styles.sidebarFriendImg}
-        src={user.profilePicture}
+        className={styles.friendImg}
+        src={publicPhoto + user.profilePicture}
         alt=""
       />
-      <span className={styles.sidebarFriendName}>{user.username}</span>
+      <span className={styles.friendName}>{user.username}</span>
     </li>
   );
 };

@@ -6,28 +6,30 @@ import Rightbar from "../../components/rightbar/Rightbar";
 import styles from "./Profile.module.scss";
 
 export default function Profile() {
+  const publicPhoto = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
     <>
       <Topbar />
-      <div className={styles.profile}>
+      <div className={styles.root}>
         <Sidebar />
         <div className={styles.profileRight}>
           <div className={styles.profileRightTop}>
             <div className={styles.profileCover}>
               <img
-                className={styles.profileCoverImg}
-                src="assets/post/3.jpeg"
+                className={styles.coverImg}
+                src={`${publicPhoto}post/3.jpeg`}
                 alt=""
               />
               <img
-                className={styles.profileUserImg}
-                src="assets/person/7.jpeg"
+                className={styles.userImg}
+                src={`${publicPhoto}person/7.jpeg`}
                 alt=""
               />
             </div>
-            <div className={styles.profileInfo}>
-              <h4 className={styles.profileInfoName}>Safak Kocaoglu</h4>
-              <span className={styles.profileInfoDesc}>Hello my friends!</span>
+            <div className={styles.info}>
+              <h4 className={styles.infoName}>Safak Kocaoglu</h4>
+              <span className={styles.infoDescription}>Hello my friends!</span>
             </div>
           </div>
           <div className={styles.profileRightBottom}>

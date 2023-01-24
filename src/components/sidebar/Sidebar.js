@@ -17,48 +17,48 @@ import { Users } from "../../dummyData";
 export default function Sidebar() {
   return (
     <div className={styles.sidebar}>
-      <div className={styles.sidebarWrapper}>
-        <ul className={styles.sidebarList}>
-          <li className={styles.sidebarListItem}>
-            <RssFeed className={styles.sidebarIcon} />
+      <div className={styles.wrapper}>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>
+            <RssFeed className={styles.icon} />
             <span className={styles.sidebarListItemText}>Feed</span>
           </li>
-          <li className={styles.sidebarListItem}>
-            <Chat className={styles.sidebarIcon} />
+          <li className={styles.listItem}>
+            <Chat className={styles.icon} />
             <span className={styles.sidebarListItemText}>Chats</span>
           </li>
-          <li className={styles.sidebarListItem}>
-            <PlayCircleFilledOutlined className={styles.sidebarIcon} />
+          <li className={styles.listItem}>
+            <PlayCircleFilledOutlined className={styles.icon} />
             <span className={styles.sidebarListItemText}>Videos</span>
           </li>
-          <li className={styles.sidebarListItem}>
-            <Group className={styles.sidebarIcon} />
+          <li className={styles.listItem}>
+            <Group className={styles.icon} />
             <span className={styles.sidebarListItemText}>Groups</span>
           </li>
-          <li className={styles.sidebarListItem}>
-            <Bookmark className={styles.sidebarIcon} />
+          <li className={styles.listItem}>
+            <Bookmark className={styles.icon} />
             <span className={styles.sidebarListItemText}>Bookmarks</span>
           </li>
-          <li className={styles.sidebarListItem}>
-            <HelpOutline className={styles.sidebarIcon} />
+          <li className={styles.listItem}>
+            <HelpOutline className={styles.icon} />
             <span className={styles.sidebarListItemText}>Questions</span>
           </li>
-          <li className={styles.sidebarListItem}>
-            <WorkOutline className={styles.sidebarIcon} />
+          <li className={styles.listItem}>
+            <WorkOutline className={styles.icon} />
             <span className={styles.sidebarListItemText}>Jobs</span>
           </li>
-          <li className={styles.sidebarListItem}>
-            <Event className={styles.sidebarIcon} />
+          <li className={styles.listItem}>
+            <Event className={styles.icon} />
             <span className={styles.sidebarListItemText}>Events</span>
           </li>
-          <li className={styles.sidebarListItem}>
-            <School className={styles.sidebarIcon} />
+          <li className={styles.listItem}>
+            <School className={styles.icon} />
             <span className={styles.sidebarListItemText}>Courses</span>
           </li>
         </ul>
         <button className={styles.sidebarButton}>Show More</button>
         <hr className={styles.sidebarHr} />
-        <ul className={styles.sidebarFriendList}>
+        <ul className={styles.firendsList}>
           {Users.map((user) => {
             return <CloseFriends key={user.id} user={user} />;
           })}
