@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useRef, useContext } from "react";
+import { CircularProgress } from "@material-ui/core";
+import { loginCall } from "../../apiCalls";
+import { AuthContext } from "../../context/AuthContext";
+
 import styles from "./Login.module.scss";
 
 export default function Login() {
+  const email = useRef();
+  const password = useRef();
+  const { isFetching, dispatch } = useContext(AuthContext);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    loginCall(
+      { email: email.current.value, password: password.current.value },
+      dispatch,
+    );
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.wrapper}>
@@ -13,15 +29,38 @@ export default function Login() {
           </span>
         </div>
         <div className={styles.loginRight}>
-          <div className={styles.box}>
-            <input placeholder="Email" className={styles.loginInput} />
-            <input placeholder="Password" className={styles.loginInput} />
-            <button className={styles.loginButton}>Log In</button>
-            <span className={styles.forgot}>Forgot Password?</span>
-            <button className={styles.registerButton}>
-              Create a New Account
+          <form className={styles.box} onSubmit={handleSubmit}>
+            <input
+              ref={email}
+              placeholder="Email"
+              type="email"
+              className={styles.loginInput}
+              required
+            />
+            <input
+              ref={password}
+              placeholder="Password"
+              type="password"
+              className={styles.loginInput}
+              minLength="6"
+              required
+            />
+            <button className={styles.loginButton} disabled={isFetching}>
+              {isFetching ? (
+                <CircularProgress color="white" size="20px" />
+              ) : (
+                "Log In"
+              )}
             </button>
-          </div>
+            <span className={styles.forgot}>Forgot Password?</span>
+            <button className={styles.registerButton} disabled={isFetching}>
+              {isFetching ? (
+                <CircularProgress color="white" size="20px" />
+              ) : (
+                "Create a New Account"
+              )}
+            </button>
+          </form>
         </div>
       </div>
     </div>

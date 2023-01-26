@@ -10,9 +10,10 @@ import {
   Event,
   School,
 } from "@material-ui/icons";
-import styles from "./Sidebar.module.scss";
 import CloseFriends from "../closeFriends/CloseFriends";
 import { Users } from "../../dummyData";
+
+import styles from "./Sidebar.module.scss";
 
 export default function Sidebar() {
   return (

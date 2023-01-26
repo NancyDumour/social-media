@@ -1,9 +1,14 @@
-import React from "react";
-import styles from "./Topbar.module.scss";
-import { Search, Person, Chat, Notifications } from "@material-ui/icons";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Search, Person, Chat, Notifications } from "@material-ui/icons";
+import { AuthContext } from "../../context/AuthContext";
+
+import styles from "./Topbar.module.scss";
 
 export default function Topbar() {
+  const { user } = useContext(AuthContext);
+  const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
     <div className={styles.container}>
       <div className={styles.topbarLeft}>
@@ -39,7 +44,17 @@ export default function Topbar() {
             <span className={styles.iconBadge}>1</span>
           </div>
         </div>
-        <img src="/assets/person/1.jpeg" alt="" className={styles.topbarImg} />
+        <Link to={`/profile/${user.username}`}>
+          <img
+            src={
+              user.profilePicture
+                ? publicFolder + user.profilePicture
+                : publicFolder + "person/noAvatar.png"
+            }
+            alt=""
+            className={styles.topbarImg}
+          />
+        </Link>
       </div>
     </div>
   );

@@ -1,14 +1,60 @@
-import React from "react";
-import styles from "./Rightbar.module.scss";
-import { Users } from "../../dummyData";
+import React, { useEffect, useState, useContext } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { Add, Remove } from "@material-ui/icons";
 import Online from "../online/Online";
+import { AuthContext } from "../../context/AuthContext";
+import { Users } from "../../dummyData";
 
-export default function Rightbar({ profile }) {
+import styles from "./Rightbar.module.scss";
+
+export default function Rightbar({ user }) {
+  const publicPhoto = process.env.REACT_APP_PUBLIC_FOLDER;
+  const [friends, setFriends] = useState([]);
+  const [followed, setFollowed] = useState(false);
+  const { user: currentUser } = useContext(AuthContext);
+
+  const handleClick = async () => {
+    try {
+      if (followed) {
+        await axios.put("/users/" + user._id + "/follow", {
+          userId: currentUser._id,
+        });
+      } else {
+        await axios.put("/users/" + user._id + "/unfollow", {
+          userId: currentUser._id,
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+    setFollowed(!followed);
+  };
+
+  useEffect(() => {
+    setFollowed(currentUser.followings.includes(user?.id));
+  }, [currentUser, user]);
+  useEffect(() => {
+    const getFriends = async () => {
+      try {
+        const friendList = await axios.get("users/friends/" + user._id);
+        setFriends(friendList.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getFriends();
+  }, [user]);
+
   const HomeRightbar = () => {
-    const publicPhoto = process.env.REACT_APP_PUBLIC_FOLDER;
-
     return (
       <>
+        {user?.username !== currentUser.username && (
+          <button className={styles.followButton} onClick={handleClick}>
+            {followed ? "Unfollow" : "Follow"}
+            {followed ? <Remove /> : <Add />}
+          </button>
+        )}
         <div className={styles.birthdayContainer}>
           <img
             className={styles.birthdayImg}
@@ -37,67 +83,43 @@ export default function Rightbar({ profile }) {
         <div className={styles.info}>
           <div className={styles.infoItem}>
             <span className={styles.infoKey}>City:</span>
-            <span className={styles.infoValue}>New York</span>
+            <span className={styles.infoValue}>{user.city}</span>
           </div>
           <div className={styles.rightbarInfoItem}>
             <span className={styles.infoKey}>From:</span>
-            <span className={styles.infoValue}>Madrid</span>
+            <span className={styles.infoValue}>{user.from}</span>
           </div>
           <div className={styles.rightbarInfoItem}>
             <span className={styles.infoKey}>Relationship:</span>
-            <span className={styles.infoValue}>Single</span>
+            <span className={styles.infoValue}>
+              {user.relationship === 1
+                ? "Single"
+                : user.relationship === 1
+                ? "Married"
+                : "-"}
+            </span>
           </div>
         </div>
         <h4 className={styles.title}>User friends</h4>
         <div className={styles.followings}>
-          <div className={styles.following}>
-            <img
-              src="assets/person/1.jpeg"
-              alt=""
-              className={styles.followingImg}
-            />
-            <span>John Carter</span>
-          </div>
-          <div className={styles.following}>
-            <img
-              src="assets/person/2.jpeg"
-              alt=""
-              className={styles.followingImg}
-            />
-            <span>John Carter</span>
-          </div>
-          <div className={styles.following}>
-            <img
-              src="assets/person/3.jpeg"
-              alt=""
-              className={styles.followingImg}
-            />
-            <span>John Carter</span>
-          </div>
-          <div className={styles.following}>
-            <img
-              src="assets/person/4.jpeg"
-              alt=""
-              className={styles.followingImg}
-            />
-            <span>John Carter</span>
-          </div>
-          <div className={styles.following}>
-            <img
-              src="assets/person/5.jpeg"
-              alt=""
-              className={styles.followingImg}
-            />
-            <span>John Carter</span>
-          </div>
-          <div className={styles.following}>
-            <img
-              src="assets/person/6.jpeg"
-              alt=""
-              className={styles.followingImg}
-            />
-            <span>John Carter</span>
-          </div>
+          {friends.map((friend) => {
+            <Link
+              to={`/profile/${friend.username}`}
+              style={{ textDecoration: "none" }}>
+              <div className={styles.following}>
+                <img
+                  src={
+                    friend.profilePicture
+                      ? publicPhoto + friend.profilePicture
+                      : publicPhoto + "person/noAvatar.png"
+                  }
+                  alt=""
+                  className={styles.followingImg}
+                />
+                <span>{friend.username}</span>
+              </div>
+            </Link>;
+          })}
         </div>
       </>
     );
@@ -105,7 +127,7 @@ export default function Rightbar({ profile }) {
   return (
     <div className={styles.root}>
       <div className={styles.wrapper}>
-        {profile ? <ProfileRightbar /> : <HomeRightbar />}
+        {user ? <ProfileRightbar /> : <HomeRightbar />}
       </div>
     </div>
   );

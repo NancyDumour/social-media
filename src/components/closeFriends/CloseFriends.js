@@ -1,4 +1,5 @@
 import React from "react";
+
 import styles from "./CloseFriends.module.scss";
 
 const CloseFriends = ({ user }) => {

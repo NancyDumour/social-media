@@ -1,4 +1,5 @@
 import React from "react";
+
 import styles from "./Online.module.scss";
 const Online = ({ user }) => {
   const publicPhoto = process.env.REACT_APP_PUBLIC_FOLDER;
